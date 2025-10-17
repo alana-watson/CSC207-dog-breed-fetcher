@@ -31,12 +31,10 @@ public class CachingBreedFetcher implements BreedFetcher {
         }
 
         // Otherwise fetch subBreeds and cache results
-//        try {
-            callsMade++;
-            List<String> subBreeds = fetcher.getSubBreeds(breed);
-            cache.put(key, new ArrayList<>(subBreeds));
-            return subBreeds;
-//        }
+        callsMade++;
+        List<String> subBreeds = fetcher.getSubBreeds(breed);
+        cache.put(key, new ArrayList<>(subBreeds));
+        return subBreeds;
     }
 
     public int getCallsMade() {
